@@ -4,5 +4,7 @@ class MakeupController < ApplicationController
     @makeup = Makeup.all
   end
 
-  
+  def create
+    
+  end
 end
