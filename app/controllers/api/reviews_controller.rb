@@ -1,7 +1,9 @@
-class ReviewsController < ApplicationController
+class Api::ReviewsController < ApplicationController
 before_action :set_review, only: [:show, :update, :destroy]
+
   def index
-    render json: Review.all, include: :makeup
+    @makeup = Makeup.find(params[:makeup_id])
+    render json: @makeup.reviews
   end
 
   def create
@@ -18,10 +20,10 @@ before_action :set_review, only: [:show, :update, :destroy]
   end
 
   def update
-    if @review.update(review.params)
+    if @review.update(review_params)
      render json: @review
    else
-     render json: {message: review.errors}, status: 400
+     render json: {message: @review.errors}, status: 400
    end
  end
 

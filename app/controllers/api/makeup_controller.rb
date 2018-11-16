@@ -15,7 +15,7 @@ before_action :set_makeup, only: [:show, :update, :destroy]
   end
 
   def show
-    render json: @makeup
+    render json: @makeup, include: :reviews
   end
 
   def update
