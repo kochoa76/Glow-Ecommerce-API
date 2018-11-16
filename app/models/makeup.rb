@@ -1,3 +1,3 @@
 class Makeup < ApplicationRecord
-  has_many :related_product_media
+  has_many :reviews
 end

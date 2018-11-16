@@ -2,7 +2,7 @@ class Api::MakeupController < ApplicationController
 before_action :set_makeup, only: [:show, :update, :destroy]
 
   def index
-    render json: Makeup.all
+    render json: Makeup.all, include: :reviews
   end
 
   def create
