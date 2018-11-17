@@ -38,7 +38,7 @@ end
 private
 
   def review_params
-    params.require(:review).permit(:makeup_id, :content)
+    params.require(:review).permit(:makeup_id, :name, :city, :rating, :content)
   end
 
   def set_review

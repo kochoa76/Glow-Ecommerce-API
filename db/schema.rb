@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_16_193513) do
+ActiveRecord::Schema.define(version: 2018_11_17_023924) do
 
   create_table "makeups", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2018_11_16_193513) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating"
+    t.string "name"
+    t.string "city"
   end
 
 end
