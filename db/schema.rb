@@ -12,6 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2018_11_20_155858) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.integer "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "state"
+    t.string "description"
+  end
+
   create_table "makeups", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -29,6 +42,20 @@ ActiveRecord::Schema.define(version: 2018_11_20_155858) do
     t.integer "rating"
     t.string "name"
     t.string "city"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.boolean "admin", default: false
+    t.integer "uid"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "oauth_token"
+    t.datetime "oath_expires_at"
+    t.string "provider"
   end
 
 end
